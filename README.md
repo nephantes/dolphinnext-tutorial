@@ -42,6 +42,7 @@ DolphinNext docker version
 
 DolphinNext can be run standalone using a docker container.
 First docker image need to be build unless you want to use prebuild from dockerhub. So, any change in the Dockerfile requires to build the image. But in this tutorial we will pull it and start the container.
+*Note: If you don't have docker installed, please go to http://dolphinnext.umassmed.edu and let us know about it (biocore@umassmed.edu). We will set an account for you.
 
 Pull the docker image
 ---------
@@ -55,13 +56,13 @@ Start the container
 ---------
 
 1. We move database outside of the container to be able to keep the changes in the database everytime you start the container.
-Please choose a directory in your machine to mount. For example, I will use /mnt/sda1/export directory for this purpose.
+Please choose a directory in your machine to mount. For example, I will use ~/export directory for this purpose.
 
-sudo mkdir -p ~/export/
+sudo mkdir -p ~/export
 
 2. While running the container;
 
-docker run -m 10G -p 8080:80 -v ~/export:/export -ti ummsbiocore/DolphinNext-studio /bin/bash
+docker run -m 10G -p 8080:80 -v ~/export:/export -ti ummsbiocore/dolphinnext-studio /bin/bash
 
 3. After you start the container, you need to start the mysql and apache server usign the command below;
 
@@ -71,6 +72,9 @@ startup
 
 http://localhost:8080/dolphinnext
 
+
+Tutorial guide
+==============
 
 This guide will walk you through how to start using DolphinNext pipelines and creating new pipelines.
 
@@ -82,10 +86,10 @@ Short Overview
 Getting Started
 ===============
 
-First off, you need to enter DolphinNext web page: https://localhost:8080/dolphinnext and click **Sign Up** or **Sign in with Google** buttons. You will be asked to enter some information about your institution, username, etc. 
+First, you need to access DolphinNext web page: https://localhost:8080/dolphinnext and click **Sign Up** or **Sign in with Google** buttons. You will be asked to enter some information about your institution, username, etc. 
 
 
-[!<img src="dolphinnext_images/sign_in.png" width="50%">]
+<img src="dolphinnext_images/sign_in.png" width="50%">
 
 Once you login, you will be the administrator of this mirror. You can add more users to your system and manage them from profile/admin section.
 
@@ -108,6 +112,9 @@ Excercise 3 (Executing a pipeline)
 [![Watch the video](dolphinnext_images/0.jpg)](https://youtu.be/gaq_LwewFPA)
 
 Once a pipeline is created, you will notice “Run” button at the right top of the page.
+
+<img src="dolphinnext_images/project_runbutton.png" width="50%">
+
 This button opens a new window where you can create a new project by clicking “Create a Project” button. After entering and saving the name of the project, it will be added to your project list. Now you can select your project by clicking on the project.
 You will then proceed by entering run name which will be added to your run list of the project. Clicking “Save run” will redirect you to the “run page” where you can initiate your run.
 
