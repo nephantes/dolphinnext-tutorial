@@ -112,7 +112,7 @@ You’ll notice several buttons at the left menu. New processes are created by c
 
 1. FastQC process:
 ---------------
-a. First, we will define a "Menu Group" to put the processes, we will create, into this group in the sidebar.
+a. Please enter FastQC for the process name and define a new "Menu Group". We will add the processes into this group in the sidebar.
 
 <img src="dolphinnext_images/build2-fastqc-addmenugroup.png">
 
