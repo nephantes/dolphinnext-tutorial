@@ -219,9 +219,29 @@ Once logged in, click on the pipeline button in the top left of the screen. You�
 
 Note*: If you could not finish the Exercise 1. Please import the tutorial.dn file using your pipeline builder and the processes defined in Exercise 1 will be in your left menu that you can use then while doing Exercise 2.
 
+Before you start building the pipeline make sure you have the processes available in your menu.
+
+<img src="dolphinnext_images/build14-menu.png">
+
+a. Please enter a name to your pipeline  Ex: "RNA-Seq-Tutorial" and select your menu group "public pipelines" and press save button.
+
+b. Please drag and drop FastQC, Hisat2 and RSeQC to the workspace;
+<img src="dolphinnext_images/build15-drag-drop.png">
+
+c. Please drag and drop two Input parameters and change their names to "Input_Reads" and "Hisat2_Index" and connect them to the processes;     
+
+d. Connect your Hisat2 process with RSeQC process using mapped_reads.
+
+e. Drag & Drop three output parameters and name them "FastQC_output", "Hisat2_Summary", and "RSeQC_output" and connect them to their corresponding processes. While naming, click their "Publish to Web Directory" and choose the right output format according to the output type of the process.
  
+<img src="dolphinnext_images/build16-name1.png">
+<img src="dolphinnext_images/build17-name2.png">
+<img src="dolphinnext_images/build18-name3.png">
 
+f. Overall pipeline should look like below;
 
+<img src="dolphinnext_images/build19-pipeline.png">
+ 
 Exercise 3 (Executing a pipeline)
 ===============
 
@@ -229,7 +249,7 @@ Exercise 3 (Executing a pipeline)
 
 Once a pipeline is created, you will notice “Run” button at the right top of the page.
 
-<img src="dolphinnext_images/project_runbutton.png" width="50%">
+<img src="dolphinnext_images/project_runbutton.png" width="20%">
 
 This button opens a new window where you can create a new project by clicking “Create a Project” button. After entering and saving the name of the project, it will be added to your project list. Now you can select your project by clicking on the project.
 You will then proceed by entering run name which will be added to your run list of the project. Clicking “Save run” will redirect you to the “run page” where you can initiate your run.
