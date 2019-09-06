@@ -176,7 +176,7 @@ Inputs: reads(fastq,set) name: val(name),file(reads)
         hisat2IndexPrefix(val) name: hisat2Index
         
 Outputs: mapped_reads(bam,set) name: val(name), file("${name}.bam")
-         outputFileText(txt,set) name: val(name), file("${name}.align_summary.txt")
+         outputFileTxt(txt,set) name: val(name), file("${name}.align_summary.txt")
 
 Script:
 hisat2 -x ${hisat2Index} -U ${reads} -S ${name}.sam &> ${name}.align_summary.txt
