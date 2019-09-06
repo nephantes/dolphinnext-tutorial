@@ -172,7 +172,7 @@ d. Add mapped_reads parameter;
 
 e. Add outputFileTxt parameter;
 
-<img src="dolphinnext_images/build10-alignment-summary.png" width="50%">
+<img src="dolphinnext_images/build8-hisat2-addnewparams-outputFileTxt.png" width="50%">
 
 f. After you select input output parameters, add their names and enter the script. The page should look like this;
 
