@@ -49,7 +49,7 @@ Pull the docker image
 
 1. Pull DolphinNext-studio
 
-  docker pull ummsbiocore/DolphinNext-studio
+  docker pull ummsbiocore/dolphinnext-studio
 
 
 Start the container
@@ -62,7 +62,7 @@ sudo mkdir -p ~/export
 
 2. While running the container;
 
-docker run -m 10G -p 8080:80 -v ~/export:/export -ti ummsbiocore/dolphinnext-studio /bin/bash
+docker run --privileged -m 10G -p 8080:80 -v ~/export:/export -ti ummsbiocore/dolphinnext-studio /bin/bash
 
 3. After you start the container, you need to start the mysql and apache server usign the command below;
 
@@ -71,7 +71,6 @@ startup
 4. Now, you can open your browser to access DolphinNext using the url below.
 
 http://localhost:8080/dolphinnext
-
 
 Tutorial guide
 ==============
@@ -89,7 +88,7 @@ Getting Started
 First, you need to access DolphinNext web page: https://localhost:8080/dolphinnext and click **Sign Up** or **Sign in with Google** buttons. You will be asked to enter some information about your institution, username, etc. 
 
 
-<img src="dolphinnext_images/sign_in.png" width="50%">
+<img src="dolphinnext_images/sign_in.png">
 
 Once you login, you will be the administrator of this mirror. You can add more users to your system and manage them from profile/admin section.
 
@@ -99,7 +98,47 @@ Excercise 1 (Creating processes)
 
 [![Watch the video](dolphinnext_images/0.jpg)](https://youtu.be/d6jkg1l7FgA)
 
-Once logged in, click on the pipeline tab in the top left of the screen. You’ll notice several buttons at the left menu. New processes are created by clicking green “New process” button.
+Once logged in, click on the pipeline tab in the top left of the screen to access pipeline builder page. 
+
+<img src="dolphinnext_images/build1-builderpage.png">
+
+You’ll notice several buttons at the left menu. New processes are created by clicking green “New process” button.
+
+1. FastQC process:
+---------------
+a. First, we will define a menu group to put the processes into this menu we will create in our tutorial session.
+
+<img src="dolphinnext_images/build2-fastqc-addmenugroup.png">
+
+b. In the fastQC process, we have an input, an output and a line of command we are going to use to start thei fastqc process. 
+
+Inputs: reads(fastq,set) name: val(name),file(reads)
+Outputs: outputFileHTML(html,file) name: "*.html"
+Script:
+'''
+fastqc ${reads}
+'''
+
+c. Let's first add the input and output parameters;
+
+<img src="dolphinnext_images/build3-fastqc-addnewparam-reads.png">   
+<img src="dolphinnext_images/build4-fastqc-addnewparam-outputFileHTML.png">   
+
+d. After both parameters created. Lets select them and define their names that we are going to use in the script section
+
+<img src="dolphinnext_images/build5-fastqc-parameters.png">
+ 
+e. Let's enter the script section
+
+<img src="dolphinnext_images/build6-fastqc-script.png">
+
+
+2. Star process:
+---------------
+
+3. RSeQC process:
+---------------
+
 
 Excercise 2 (Building a pipeline)
 ===============
