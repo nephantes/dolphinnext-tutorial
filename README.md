@@ -106,18 +106,18 @@ You’ll notice several buttons at the left menu. New processes are created by c
 
 1. FastQC process:
 ---------------
-a. First, we will define a menu group to put the processes into this menu we will create in our tutorial session.
+a. First, we will define a menu group to put the processes into this menu, we will create in the tutorial session.
 
 <img src="dolphinnext_images/build2-fastqc-addmenugroup.png">
 
-b. In the fastQC process, we have an input, an output and a line of command we are going to use to start thei fastqc process. 
+b. In the fastQC process, we have an input, an output and a line of a command we are going to use to start the fastqc process. 
 
+```
 Inputs: reads(fastq,set) name: val(name),file(reads)
 Outputs: outputFileHTML(html,file) name: "*.html"
 Script:
-'''
-fastqc ${reads}
-'''
+   fastqc ${reads}
+```
 
 c. Let's first add the input and output parameters;
 
