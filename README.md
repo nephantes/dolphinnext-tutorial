@@ -145,33 +145,12 @@ f. Press "Save changes" button at the bottom of the modal to create the process.
 Let's create Hisat2 process. 
 a. First, please click, green “New process” button to open "Add New Process" modal.
 
-b. Enter process name "Hisat2"
-
-c. Select "Menu Group"; Tutorial.
-
-d. Select "reads" for the first "Input Parameter" and enter  val(name),file(reads) for its "Input Name"
-
-e. Second we need to define another input parameter to get index prefix for Hisat2 aligner. To do that, press "+" button next to "Parameters" section and enter "genomeIndexPath" 
-
-<img src="dolphinnext_images/build7-hisat2-addnewparam-hisat2Index-prefix.png">
-
-The input parameters should look like below;
-
-<img src="dolphinnext_images/build8-hisat2-inputs.png">
-
-f. For output parameters, we should define "mapped_reads" by adding a new parameter.
-
-<img src="dolphinnext_images/build9-hisat2-addnewparams-mapped_reads.png">
-
-and select this parameter for "Output Parameter" section and enter val(name), file("${name}.bam") for its "Ouput Name".
-
-e. We will add one more parameter for hisat2 alignment summary as an example output in txt format. To be able to reuse parameters we try to choose generic names. In this case we will use "outputFileTxt".
-
-<img src="dolphinnext_images/build10-outputFileTxt.png">
-
-f. Inputs, outputs and scripts should be defined like below;
+b. Inputs, outputs and scripts should be defined like below;
+Please add hisat2IndexPrefix, mapped_reads and outputFileTxt parameters by pressing "+" button next to "Parameters" section with the values below; 
 
 ```
+Name: "Hisat2"
+Menu Group: "Tutorial"
 Inputs: reads(fastq,set) name: val(name),file(reads)
         hisat2IndexPrefix(val) name: hisat2Index
         
@@ -183,22 +162,65 @@ hisat2 -x ${hisat2Index} -U ${reads} -S ${name}.sam &> ${name}.align_summary.txt
 samtools view -bS ${name}.sam > ${name}.bam
 
 ```
+c. Add hisat2IndexPrefix parameter;
+
+<img src="dolphinnext_images/build7-hisat2-addnewparam-hisat2Index-prefix.png">
+
+d. Add mapped_reads parameter;
+
+<img src="dolphinnext_images/build9-hisat2-addnewparams-mapped_reads.png">
+
+e. Add outputFileTxt parameter;
+
+<img src="dolphinnext_images/build10-alignment-summary.png">
+
+f. After you select input output parameters, add their names and enter the script. The page should look like this;
 
 <img src="dolphinnext_images/build11-alignment-summary.png">
 
-g. please, Save changes before you close the screen.
+g. Please, Save changes before you close the screen.
 
 3. RSeQC process:
 ---------------
 
+a. First, please click, green “New process” button to open "Add New Process" modal.
 
+b. The form should be filled using the values below;
+Please add a new parameter called bedFile. 
 
+```
+Name: "RSeQC"
+Menu Group: "Tutorial"
 
+Inputs: mapped_reads(bam,set) name: val(name), file(bam)
+        bedFile(bed,file) name: bed
+Outputs: outputFileTxt(txt,file) name: "RSeQC.${name}.txt"
+
+Script:
+read_distribution.py  -i ${bam} -r ${bed}> RSeQC.${name}.txt
+```
+
+c. Add bedFile parameter;
+
+<img src="dolphinnext_images/build12-bedFile.png">
+
+d. After you select input output parameters, add their names and enter the script. The page should look like this;
+
+<img src="dolphinnext_images/build13-RSeQC-process.png">
+
+g. Please, Save changes before you close the screen.
+
+Here Excercise 1 is finished. Please move to excercise 2 to build the pipeline using the process you defined in excercise 1. 
 
 Excercise 2 (Building a pipeline)
 ===============
 
 Once logged in, click on the pipeline button in the top left of the screen. You’ll notice Enter Pipeline Name box, just below the Pipelines button.
+
+Note*: If you could not finish the Excercise 1. Please import the tutorial.dn file using your pipeline builder and the processes defined in excercise 1 will be in your left menu that you can use then while doing excercise 2.
+
+ 
+
 
 Excercise 3 (Executing a pipeline)
 ===============
