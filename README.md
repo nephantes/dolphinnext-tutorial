@@ -102,15 +102,21 @@ Once logged in, click on the pipeline tab in the top left of the screen to acces
 
 <img src="dolphinnext_images/build1-builderpage.png">
 
+The process we will create in this excercise;
+---------------
+1. FastQC process
+2. Hisat2 process
+3. RSeQC process
+
 You’ll notice several buttons at the left menu. New processes are created by clicking green “New process” button.
 
 1. FastQC process:
 ---------------
-a. First, we will define a menu group to put the processes into this menu, we will create in the tutorial session.
+a. First, we will define a "Menu Group" to put the processes, we will create, into this group in the sidebar.
 
 <img src="dolphinnext_images/build2-fastqc-addmenugroup.png">
 
-b. In the fastQC process, we have an input, an output and a line of a command we are going to use to start the fastqc process. 
+b. In the FastQC process, we have an input, an output and a line of a command we are going to use to execute the fastqc process. 
 
 ```
 Inputs: reads(fastq,set) name: val(name),file(reads)
@@ -119,12 +125,12 @@ Script:
    fastqc ${reads}
 ```
 
-c. Let's first add the input and output parameters;
+c. Let's add input and output parameters using "+" button in "Parameters" section;
 
 <img src="dolphinnext_images/build3-fastqc-addnewparam-reads.png">   
 <img src="dolphinnext_images/build4-fastqc-addnewparam-outputFileHTML.png">   
 
-d. After both parameters created. Lets select them and define their names that we are going to use in the script section
+d. After both parameters created. Lets select them and define their "Input Names" that we are going to use in the script section
 
 <img src="dolphinnext_images/build5-fastqc-parameters.png">
  
@@ -132,12 +138,61 @@ e. Let's enter the script section
 
 <img src="dolphinnext_images/build6-fastqc-script.png">
 
+f. Press "Save changes" button at the bottom of the modal to create the process. Now this process is ready to use. We will use it in the Excercise 2.
 
-2. Star process:
+2. Hisat2 process:
 ---------------
+Let's create Hisat2 process. 
+a. First, please click, green “New process” button to open "Add New Process" modal.
+
+b. Enter process name "Hisat2"
+
+c. Select "Menu Group"; Tutorial.
+
+d. Select "reads" for the first "Input Parameter" and enter  val(name),file(reads) for its "Input Name"
+
+e. Second we need to define another input parameter to get index prefix for Hisat2 aligner. To do that, press "+" button next to "Parameters" section and enter "genomeIndexPath" 
+
+<img src="dolphinnext_images/build7-hisat2-addnewparam-hisat2Index-prefix.png">
+
+The input parameters should look like below;
+
+<img src="dolphinnext_images/build8-hisat2-inputs.png">
+
+f. For output parameters, we should define "mapped_reads" by adding a new parameter.
+
+<img src="dolphinnext_images/build9-hisat2-addnewparams-mapped_reads.png">
+
+and select this parameter for "Output Parameter" section and enter val(name), file("${name}.bam") for its "Ouput Name".
+
+e. We will add one more parameter for hisat2 alignment summary as an example output in txt format. To be able to reuse parameters we try to choose generic names. In this case we will use "outputFileTxt".
+
+<img src="dolphinnext_images/build10-outputFileTxt.png">
+
+f. Inputs, outputs and scripts should be defined like below;
+
+```
+Inputs: reads(fastq,set) name: val(name),file(reads)
+        hisat2IndexPrefix(val) name: hisat2Index
+        
+Outputs: mapped_reads(bam,set) name: val(name), file("${name}.bam")
+         outputFileText(txt,set) name: val(name), file("${name}.align_summary.txt")
+
+Script:
+hisat2 -x ${hisat2Index} -U ${reads} -S ${name}.sam &> ${name}.align_summary.txt
+samtools view -bS ${name}.sam > ${name}.bam
+
+```
+
+<img src="dolphinnext_images/build11-alignment-summary.png">
+
+g. please, Save changes before you close the screen.
 
 3. RSeQC process:
 ---------------
+
+
+
 
 
 Excercise 2 (Building a pipeline)
