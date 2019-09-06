@@ -229,9 +229,9 @@ b. Please drag and drop FastQC, Hisat2 and RSeQC to the workspace;
 
 <img src="dolphinnext_images/build15-drag-drop.png" width="50%">
 
-c. Please drag and drop two Input parameters and change their names to "Input_Reads" and "Hisat2_Index" and connect them to the processes;     
+c. Please drag and drop three Input parameters and change their names to "Input_Reads", "Hisat2_Index" and "bedFile" and connect them to their processes;     
 
-d. Connect your Hisat2 process with RSeQC process using mapped_reads.
+d. Connect your Hisat2 process with RSeQC process using mapped_reads parameter in both. You will see that, if the types match you can connect the two processes.
 
 e. Drag & Drop three output parameters and name them "FastQC_output", "Hisat2_Summary", and "RSeQC_output" and connect them to their corresponding processes. While naming, click their "Publish to Web Directory" and choose the right output format according to the output type of the process.
  
