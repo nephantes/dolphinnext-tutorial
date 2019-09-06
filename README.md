@@ -93,7 +93,7 @@ First, you need to access DolphinNext web page: https://localhost:8080/dolphinne
 Once you login, you will be the administrator of this mirror. You can add more users to your system and manage them from profile/admin section.
 
 
-Excercise 1 (Creating processes)
+Exercise 1 (Creating processes)
 ===============
 
 [![Watch the video](dolphinnext_images/0.jpg)](https://youtu.be/d6jkg1l7FgA)
@@ -138,7 +138,7 @@ e. Let's enter the script section
 
 <img src="dolphinnext_images/build6-fastqc-script.png">
 
-f. Press "Save changes" button at the bottom of the modal to create the process. Now this process is ready to use. We will use it in the Excercise 2.
+f. Press "Save changes" button at the bottom of the modal to create the process. Now this process is ready to use. We will use it in the Exercise 2.
 
 2. Hisat2 process:
 ---------------
@@ -210,19 +210,19 @@ d. After you select input output parameters, add their names and enter the scrip
 
 g. Please, Save changes before you close the screen.
 
-Here Excercise 1 is finished. Please move to excercise 2 to build the pipeline using the process you defined in excercise 1. 
+Here Exercise 1 is finished. Please move to Exercise 2 to build the pipeline using the processes you defined in Exercise 1. 
 
-Excercise 2 (Building a pipeline)
+Exercise 2 (Building a pipeline)
 ===============
 
 Once logged in, click on the pipeline button in the top left of the screen. You’ll notice Enter Pipeline Name box, just below the Pipelines button.
 
-Note*: If you could not finish the Excercise 1. Please import the tutorial.dn file using your pipeline builder and the processes defined in excercise 1 will be in your left menu that you can use then while doing excercise 2.
+Note*: If you could not finish the Exercise 1. Please import the tutorial.dn file using your pipeline builder and the processes defined in Exercise 1 will be in your left menu that you can use then while doing Exercise 2.
 
  
 
 
-Excercise 3 (Executing a pipeline)
+Exercise 3 (Executing a pipeline)
 ===============
 
 [![Watch the video](dolphinnext_images/0.jpg)](https://youtu.be/gaq_LwewFPA)
