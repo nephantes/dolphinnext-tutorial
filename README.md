@@ -100,7 +100,7 @@ Exercise 1 (Creating processes)
 
 Once logged in, click on the pipeline tab in the top left of the screen to access pipeline builder page. 
 
-<img src="dolphinnext_images/build1-builderpage.png">
+<img src="dolphinnext_images/build1-builderpage.png" width="50%">
 
 The process we will create in this excercise;
 ---------------
@@ -114,7 +114,7 @@ You’ll notice several buttons at the left menu. New processes are created by c
 ---------------
 a. Please enter FastQC for the process name and define a new "Menu Group". We will add the processes into this group in the sidebar.
 
-<img src="dolphinnext_images/build2-fastqc-addmenugroup.png">
+<img src="dolphinnext_images/build2-fastqc-addmenugroup.png" width="50%">
 
 b. In the FastQC process, we have an input, an output and a line of a command we are going to use to execute the fastqc process. 
 
@@ -127,16 +127,16 @@ Script:
 
 c. Let's add input and output parameters using "+" button in "Parameters" section;
 
-<img src="dolphinnext_images/build3-fastqc-addnewparam-reads.png">   
-<img src="dolphinnext_images/build4-fastqc-addnewparam-outputFileHTML.png">   
+<img src="dolphinnext_images/build3-fastqc-addnewparam-reads.png" width="50%">   
+<img src="dolphinnext_images/build4-fastqc-addnewparam-outputFileHTML.png" width="50%">   
 
 d. After both parameters created. Lets select them and define their "Input Names" that we are going to use in the script section
 
-<img src="dolphinnext_images/build5-fastqc-parameters.png">
+<img src="dolphinnext_images/build5-fastqc-parameters.png" width="50%">
  
 e. Let's enter the script section
 
-<img src="dolphinnext_images/build6-fastqc-script.png">
+<img src="dolphinnext_images/build6-fastqc-script.png" width="50%">
 
 f. Press "Save changes" button at the bottom of the modal to create the process. Now this process is ready to use. We will use it in the Exercise 2.
 
@@ -164,19 +164,19 @@ samtools view -bS ${name}.sam > ${name}.bam
 ```
 c. Add hisat2IndexPrefix parameter;
 
-<img src="dolphinnext_images/build7-hisat2-addnewparam-hisat2Index-prefix.png">
+<img src="dolphinnext_images/build7-hisat2-addnewparam-hisat2Index-prefix.png" width="50%">
 
 d. Add mapped_reads parameter;
 
-<img src="dolphinnext_images/build9-hisat2-addnewparams-mapped_reads.png">
+<img src="dolphinnext_images/build9-hisat2-addnewparams-mapped_reads.png" width="50%">
 
 e. Add outputFileTxt parameter;
 
-<img src="dolphinnext_images/build10-alignment-summary.png">
+<img src="dolphinnext_images/build10-alignment-summary.png" width="50%">
 
 f. After you select input output parameters, add their names and enter the script. The page should look like this;
 
-<img src="dolphinnext_images/build11-alignment-summary.png">
+<img src="dolphinnext_images/build11-alignment-summary.png" width="50%">
 
 g. Please, Save changes before you close the screen.
 
@@ -202,11 +202,11 @@ read_distribution.py  -i ${bam} -r ${bed}> RSeQC.${name}.txt
 
 c. Add bedFile parameter;
 
-<img src="dolphinnext_images/build12-bedFile.png">
+<img src="dolphinnext_images/build12-bedFile.png" width="50%">
 
 d. After you select input output parameters, add their names and enter the script. The page should look like this;
 
-<img src="dolphinnext_images/build13-RSeQC-process.png">
+<img src="dolphinnext_images/build13-RSeQC-process.png" width="50%">
 
 g. Please, Save changes before you close the screen.
 
@@ -221,13 +221,13 @@ Note*: If you could not finish the Exercise 1. Please import the tutorial.dn fil
 
 Before you start building the pipeline make sure you have the processes available in your menu.
 
-<img src="dolphinnext_images/build14-menu.png" width="%30">
+<img src="dolphinnext_images/build14-menu.png" width="30%">
 
 a. Please enter a name to your pipeline  Ex: "RNA-Seq-Tutorial" and select your menu group "public pipelines" and press save button.
 
 b. Please drag and drop FastQC, Hisat2 and RSeQC to the workspace;
 
-<img src="dolphinnext_images/build15-drag-drop.png" width="%50">
+<img src="dolphinnext_images/build15-drag-drop.png" width="50%">
 
 c. Please drag and drop two Input parameters and change their names to "Input_Reads" and "Hisat2_Index" and connect them to the processes;     
 
@@ -235,11 +235,11 @@ d. Connect your Hisat2 process with RSeQC process using mapped_reads.
 
 e. Drag & Drop three output parameters and name them "FastQC_output", "Hisat2_Summary", and "RSeQC_output" and connect them to their corresponding processes. While naming, click their "Publish to Web Directory" and choose the right output format according to the output type of the process.
  
-<img src="dolphinnext_images/build16-name1.png" width="%30">
+<img src="dolphinnext_images/build16-name1.png" width="30%">
 
-<img src="dolphinnext_images/build17-name2.png" width="%30">
+<img src="dolphinnext_images/build17-name2.png" width="30%">
 
-<img src="dolphinnext_images/build18-name3.png" width="%30">
+<img src="dolphinnext_images/build18-name3.png" width="30%">
 
 f. Overall pipeline should look like below;
 
