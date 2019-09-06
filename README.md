@@ -221,12 +221,12 @@ Note*: If you could not finish the Exercise 1. Please import the tutorial.dn fil
 
 Before you start building the pipeline make sure you have the processes available in your menu.
 
-<img src="dolphinnext_images/build14-menu.png">
+<img src="dolphinnext_images/build14-menu.png" width="%30">
 
 a. Please enter a name to your pipeline  Ex: "RNA-Seq-Tutorial" and select your menu group "public pipelines" and press save button.
 
 b. Please drag and drop FastQC, Hisat2 and RSeQC to the workspace;
-<img src="dolphinnext_images/build15-drag-drop.png">
+<img src="dolphinnext_images/build15-drag-drop.png" width="%50">
 
 c. Please drag and drop two Input parameters and change their names to "Input_Reads" and "Hisat2_Index" and connect them to the processes;     
 
@@ -234,9 +234,9 @@ d. Connect your Hisat2 process with RSeQC process using mapped_reads.
 
 e. Drag & Drop three output parameters and name them "FastQC_output", "Hisat2_Summary", and "RSeQC_output" and connect them to their corresponding processes. While naming, click their "Publish to Web Directory" and choose the right output format according to the output type of the process.
  
-<img src="dolphinnext_images/build16-name1.png">
-<img src="dolphinnext_images/build17-name2.png">
-<img src="dolphinnext_images/build18-name3.png">
+<img src="dolphinnext_images/build16-name1.png" width="%30">
+<img src="dolphinnext_images/build17-name2.png" width="%30">
+<img src="dolphinnext_images/build18-name3.png" width="%30">
 
 f. Overall pipeline should look like below;
 
