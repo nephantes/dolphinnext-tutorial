@@ -250,14 +250,94 @@ Exercise 3 (Executing a pipeline)
 
 [![Watch the video](dolphinnext_images/0.jpg)](https://youtu.be/gaq_LwewFPA)
 
-Once a pipeline is created, you will notice “Run” button at the right top of the page.
+1. Once a pipeline is created, you will notice “Run” button at the right top of the page.
 
 <img src="dolphinnext_images/project_runbutton.png" width="20%">
 
-This button opens a new window where you can create a new project by clicking “Create a Project” button. After entering and saving the name of the project, it will be added to your project list. Now you can select your project by clicking on the project.
+2. This button opens a new window where you can create a new project by clicking “Create a Project” button. After entering and saving the name of the project, it will be added to your project list. 
+
+<img src="dolphinnext_images/execute1_create_project.png" width="50%">
+
+3. Now you can select your project by clicking on the project.
 You will then proceed by entering run name which will be added to your run list of the project. Clicking “Save run” will redirect you to the “run page” where you can initiate your run.
 
+<img src="dolphinnext_images/execute2_enter_runname.png" width="50%">
+
+4. Here, please enter your working directory, choose your "Run Environment", click "Use Singularity Image" and enter the values below;
+```
+Work Directory: /export/tests/test3
+Run Environment: Local
+Image Path: dolphinnext/rnaseq:1.0
+Run Options: --bind /export --bind /data
+```  
+
+<img src="dolphinnext_images/execute3_enter_workdir.png" width="50%">
+
+5. Now we are ready to enter inputs we defined for the pipeline;
+First enter the location of the bed file.
+```
+bedFile: /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed
+```
+<img src="dolphinnext_images/execute4_enter_bedfile.png" width="50%">
+
+6. Second enter the prefix for the hisat2 index files.
+```
+Hisat2_Index: /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome
+```
+
+<img src="dolphinnext_images/execute5_enter_index.png" width="50%">
+
+7. Now, we are ready to enter adding files;
+First go to Files Tab in "Select/Add Input File" modal and click "Add File" button
+
+<img src="dolphinnext_images/execute6_add_files.png" width="50%">
+
+8. Enter the full path of the location of your files. Here for the test case we will use the path below;
+```
+File Directory (Full Path): /data/fastq_data/single
+```
+And choose "Single List" for the "Collection Type" and press add all files button.
+
+<img src="dolphinnext_images/execute7_enter_fullpath.png" width="50%">
+
+9. Here there is an option to change the names but we will keep them as they are and enter a collection name and "save files".
+```
+collection name: test collection
+```
+<img src="dolphinnext_images/execute8_enter_collectionname.png" width="50%">
+
+10. In the next screen, the user can still add or remove some samples. Let's click "Save file" button to process all samples.
+
+<img src="dolphinnext_images/execute_9_choosefiles.png" width="50%">
+
+11. After we fill the inputs it should look like below and the orange "Waiting" button at the top right should turn to green "Ready to Run" button;
+
+<img src="dolphinnext_images/execute10_filled_inputs.png" width="50%">
+
+12. Press that "Ready to Run" button.
+
+13. All run should finish in a couple of minutes. When the run finalized the log section will be look like below;
+
+a. Logs:
+<img src="dolphinnext_images/execute11_logtab.png">
+b. Timeline:
+<img src="dolphinnext_images/execute12_timeline.png">
+c. Nextflow Reports:
+<img src="dolphinnext_images/execute13_nextflowreports.png">
+
+14. In the report section, you can monitor all defined reports in the pipeline;
+<img src="dolphinnext_images/execute14_Reports.png">
+a. FastQC
+<img src="dolphinnext_images/execute15_FastQC.png">
+b. Hisat2
+<img src="dolphinnext_images/execute16_Hisat2.png">
+c. RSeQC
+<img src="dolphinnext_images/execute17_RSeQC.png">
 
 
 
+
+
+
+ 
 
