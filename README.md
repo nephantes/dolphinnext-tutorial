@@ -334,6 +334,13 @@ b. Hisat2
 c. RSeQC
 <img src="dolphinnext_images/execute17_RSeQC.png">
 
+15. As you can tell from Timeline report, it used only a cpu and it didn't paralelize the run. To be able to start parallel runs, the profile for the environment should be changed.
+
+<img src="dolphinnext_images/execute18_profile_fix.png">
+
+With this change there will be 3 parallel jobs.
+
+<img src="dolphinnext_images/execute19_parallel_run.png">
 
 
 
