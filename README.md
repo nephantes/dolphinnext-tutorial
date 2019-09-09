@@ -8,10 +8,10 @@ DolphinNext provides:
 
 1. A drag and drop user interface to build nextflow pipelines
 2. Reproducible pipelines with version tracking 
-3. Seamless portability to different computing environments with containarization
+3. Seamless portability to different computing environments with containerization
 4. Simplified pipeline sharing using GitHub (github.com)
-5. Support for continues integration and tests (travis-ci.org)
-6. Easy re-execution of pipelines by copying previous runs
+5. Support for continuous integration and tests (travis-ci.org)
+6. Easy re-execution of pipelines by copying previous runs settings
 7. Integrated data analysis and reporting interface with R markdown support
 
 Summary
@@ -21,7 +21,7 @@ Our aim is;
 --------
 
 1. Reusability
-2. Reproducibililty
+2. Reproducibility
 3. Shareability
 4. Easy execution
 5. Easy monitoring
@@ -41,7 +41,7 @@ DolphinNext docker version
 --------
 
 DolphinNext can be run standalone using a docker container.
-First docker image need to be build unless you want to use prebuild from dockerhub. So, any change in the Dockerfile requires to build the image. But in this tutorial we will pull it and start the container.
+First docker image need to be build unless you want to use prebuild from dockerhub. So, any change in the Dockerfile requires to build the image. But in this tutorial, we will pull it and start the container.
 *Note: If you don't have docker installed, please go to http://dolphinnext.umassmed.edu and let us know about it (biocore@umassmed.edu). We will set an account for you.
 
 Pull the docker image
@@ -55,7 +55,7 @@ docker pull ummsbiocore/dolphinnext-studio
 Start the container
 ---------
 
-1. We move database outside of the container to be able to keep the changes in the database everytime you start the container.
+1. We move database outside of the container to be able to keep the changes in the database every time you start the container.
 Please choose a directory in your machine to mount. For example, I will use ~/export directory for this purpose.
 ```
 sudo mkdir -p ~/export
@@ -64,7 +64,7 @@ sudo mkdir -p ~/export
 ```
 docker run --privileged -m 10G -p 8080:80 -v ~/export:/export -ti ummsbiocore/dolphinnext-studio /bin/bash
 ```
-3. After you start the container, you need to start the mysql and apache server usign the command below;
+3. After you start the container, you need to start the mysql and apache server using the command below;
 ```
 startup
 ```
@@ -102,7 +102,7 @@ Once logged in, click on the pipeline tab in the top left of the screen to acces
 
 <img src="dolphinnext_images/build1-builderpage.png" width="80%">
 
-The process we will create in this excercise;
+The process we will create in this exercise;
 ---------------
 1. FastQC process
 2. Hisat2 process
@@ -186,7 +186,7 @@ f. After you select input output parameters, add their names and enter the scrip
 
 <img src="dolphinnext_images/build11-alignment-summary.png" width="80%">
 
-g. Please, Save changes before you close the screen.
+g. Please **save** changes before you close the screen.
 
 3. RSeQC process:
 ---------------
@@ -233,7 +233,7 @@ Before you start building the pipeline make sure you have the processes availabl
 
 <img src="dolphinnext_images/build14-menu.png" width="50%">
 
-a. Please enter a name to your pipeline  Ex: "RNA-Seq-Tutorial" and select your menu group "public pipelines" and press save button.
+a. Please enter a name to your pipeline. E.g. "RNA-Seq-Tutorial" and select your menu group "public pipelines" and press save button.
 
 b. Please drag and drop FastQC, Hisat2 and RSeQC to the workspace;
 
@@ -344,7 +344,7 @@ b. Hisat2
 c. RSeQC
 <img src="dolphinnext_images/execute17_RSeQC.png" width="80%">
 
-15. As you can tell from Timeline report, it used only a cpu and it didn't paralelize the run. To be able to start parallel runs, the profile for the environment should be changed.
+15. As you can tell from Timeline report, it used only a cpu and it didn't parallelize the run. To be able to start parallel runs, the profile for the environment should be changed.
 
 <img src="dolphinnext_images/execute18_profile_fix.png" width="80%">
 
