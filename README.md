@@ -165,7 +165,7 @@ Inputs:
       
 Outputs: 
   mapped_reads(bam,set) name: val(name), file("${name}.bam")
-  outputFileTxt(txt,set) name: val(name), file("${name}.align_summary.txt")
+  outputFileTxt(txt,file) name: "${name}.align_summary.txt"
 
 Script:
   hisat2 -x ${hisat2Index} -U ${reads} -S ${name}.sam &> ${name}.align_summary.txt
