@@ -330,27 +330,33 @@ collection name: test collection
 
   **13.** All run should finish in a couple of minutes. When the run finalized the log section will be look like below;
 
-a. Logs:
-<img src="dolphinnext_images/execute11_logtab.png" width="80%">
-b. Timeline:
-<img src="dolphinnext_images/execute12_timeline.png" width="80%">
-c. Nextflow Reports:
-<img src="dolphinnext_images/execute13_nextflowreports.png" width="80%">
+  **a. Logs**:
+
+<img src="dolphinnext_images/execute11_logtab.png" width="100%">
+
+  **b. Timeline**:
+<img src="dolphinnext_images/execute12_timeline.png" width="100%">
+
+  **c. Nextflow Reports**:
+<img src="dolphinnext_images/execute13_nextflowreports.png" width="100%">
 
   **14.** In the report section, you can monitor all defined reports in the pipeline;
-<img src="dolphinnext_images/execute14_Reports.png" width="80%">
-a. FastQC
-<img src="dolphinnext_images/execute15_FastQC.png" width="80%">
-b. Hisat2
-<img src="dolphinnext_images/execute16_Hisat2.png" width="80%">
-c. RSeQC
-<img src="dolphinnext_images/execute17_RSeQC.png" width="80%">
+<img src="dolphinnext_images/execute14_Reports.png" width="100%">
+
+  **a. FastQC**
+<img src="dolphinnext_images/execute15_FastQC.png" width="100%">
+
+  **b. Hisat2**
+<img src="dolphinnext_images/execute16_Hisat2.png" width="100%">
+
+  **c. RSeQC**
+<img src="dolphinnext_images/execute17_RSeQC.png" width="100%">
 
   **15.** As you can tell from Timeline report, it used only a cpu and it didn't parallelize the run. To be able to start parallel runs, the profile for the environment should be changed.
 
-<img src="dolphinnext_images/execute18_profile_fix.png" width="80%">
+<img src="dolphinnext_images/execute18_profile_fix.png" width="100%">
 
 With this change there will be 3 parallel jobs.
 
-<img src="dolphinnext_images/execute19_parallel_run.png" width="80%">
+<img src="dolphinnext_images/execute19_parallel_run.png" width="100%">
 
