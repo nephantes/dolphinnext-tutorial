@@ -48,26 +48,26 @@ Pull the docker image
 ---------
 
 1. Pull DolphinNext-studio
-
-  docker pull ummsbiocore/dolphinnext-studio
-
+```   
+docker pull ummsbiocore/dolphinnext-studio
+```
 
 Start the container
 ---------
 
 1. We move database outside of the container to be able to keep the changes in the database everytime you start the container.
 Please choose a directory in your machine to mount. For example, I will use ~/export directory for this purpose.
-
+```
 sudo mkdir -p ~/export
-
+```
 2. While running the container;
-
+```
 docker run --privileged -m 10G -p 8080:80 -v ~/export:/export -ti ummsbiocore/dolphinnext-studio /bin/bash
-
+```
 3. After you start the container, you need to start the mysql and apache server usign the command below;
-
+```
 startup
-
+```
 4. Now, you can open your browser to access DolphinNext using the url below.
 
 http://localhost:8080/dolphinnext
@@ -119,10 +119,16 @@ a. Please enter FastQC for the process name and define a new "Menu Group". We wi
 b. In the FastQC process, we have an input, an output and a line of a command we are going to use to execute the fastqc process. 
 
 ```
-Inputs: reads(fastq,set) name: val(name),file(reads)
-Outputs: outputFileHTML(html,file) name: "*.html"
+Name: "FastQC"
+Menu Group: "Tutorial"
+Inputs: 
+  reads(fastq,set) name: val(name),file(reads)
+  
+Outputs: 
+  outputFileHTML(html,file) name: "*.html"
+  
 Script:
-   fastqc ${reads}
+  fastqc ${reads}
 ```
 
 c. Let's add input and output parameters using "+" button in "Parameters" section;
@@ -151,15 +157,17 @@ Please add hisat2IndexPrefix, mapped_reads and outputFileTxt parameters by press
 ```
 Name: "Hisat2"
 Menu Group: "Tutorial"
-Inputs: reads(fastq,set) name: val(name),file(reads)
-        hisat2IndexPrefix(val) name: hisat2Index
-        
-Outputs: mapped_reads(bam,set) name: val(name), file("${name}.bam")
-         outputFileTxt(txt,set) name: val(name), file("${name}.align_summary.txt")
+Inputs: 
+  reads(fastq,set) name: val(name),file(reads)
+  hisat2IndexPrefix(val) name: hisat2Index
+      
+Outputs: 
+  mapped_reads(bam,set) name: val(name), file("${name}.bam")
+  outputFileTxt(txt,set) name: val(name), file("${name}.align_summary.txt")
 
 Script:
-hisat2 -x ${hisat2Index} -U ${reads} -S ${name}.sam &> ${name}.align_summary.txt
-samtools view -bS ${name}.sam > ${name}.bam
+  hisat2 -x ${hisat2Index} -U ${reads} -S ${name}.sam &> ${name}.align_summary.txt
+  samtools view -bS ${name}.sam > ${name}.bam
 
 ```
 c. Add hisat2IndexPrefix parameter;
@@ -191,13 +199,15 @@ Please add a new parameter called bedFile.
 ```
 Name: "RSeQC"
 Menu Group: "Tutorial"
-
-Inputs: mapped_reads(bam,set) name: val(name), file(bam)
-        bedFile(bed,file) name: bed
-Outputs: outputFileTxt(txt,file) name: "RSeQC.${name}.txt"
-
+Inputs: 
+  mapped_reads(bam,set) name: val(name), file(bam)
+  bedFile(bed,file) name: bed
+  
+Outputs: 
+  outputFileTxt(txt,file) name: "RSeQC.${name}.txt"
+  
 Script:
-read_distribution.py  -i ${bam} -r ${bed}> RSeQC.${name}.txt
+  read_distribution.py  -i ${bam} -r ${bed}> RSeQC.${name}.txt
 ```
 
 c. Add bedFile parameter;
