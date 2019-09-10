@@ -290,6 +290,7 @@ Run Environment: Local
 Image Path: dolphinnext/rnaseq:1.0
 Run Options: --bind /export --bind /data
 
+Inputs:
 bedFile: /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed
 Hisat2_Index: /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome
 File Directory (Full Path): /data/fastq_data/single
@@ -299,13 +300,15 @@ File Directory (Full Path): /data/fastq_data/single
 
   **5.** Now we are ready to enter inputs we defined for the pipeline.
 Please choose "Manually" tab.
-First enter the location of the bed file. bedFile;
+First enter the location of the bed file. 
+bedFile:
 ```
 /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed
 ```
 <img src="dolphinnext_images/execute4_enter_bedfile.png" width="100%">
 
-  **6.** Second enter the prefix for the hisat2 index files. Please choose "Manually" tab. Hisat2_Index: 
+  **6.** Second enter the prefix for the hisat2 index files. Please choose "Manually" tab. 
+Hisat2_Index: 
 ```
 /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome
 ```
@@ -318,8 +321,9 @@ First go to Files Tab in "Select/Add Input File" modal and click "Add File" butt
 <img src="dolphinnext_images/execute6_add_files.png" width="100%">
 
   **8.** Enter the full path of the location of your files. Please choose "Files tab" and click "Add File" button. Here for the test case we will use the path below;
+File Directory (Full Path): 
 ```
-File Directory (Full Path): /data/fastq_data/single
+/data/fastq_data/single
 ```
 And choose "Single List" for the "Collection Type" and press add all files button.
 
