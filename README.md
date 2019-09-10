@@ -33,12 +33,13 @@ To understand the basics of DolphinNext, how to use pipeline builder for differe
 Overview
 ========
   * [Before you start](#before-you-start)
+  * [Getting Started](#getting-started)
   * [Exercise 1: Creating processes](#exercise-1---creating-processes)
-    * [FastQC process]
-    * [Hisat2 process]
-    * [RSeQC process] 
-  * [Exercise 2: Building pipeline]
-  * [Exercise 3: Running pipeline] 
+    * [FastQC process](#1-fastqc-process)
+    * [Hisat2 process](#2-hisat2-process)
+    * [RSeQC process](#3-rseqc-process)
+  * [Exercise 2: Building pipeline](#exercise-2---building-pipeline)
+  * [Exercise 3: Running pipeline](#exercise-3---running-pipeline)
 
 
 If you prefer, you can click on the video links to follow the tutorial in a video.
@@ -236,7 +237,7 @@ Script:
 
 Here Exercise 1 is finished. Please move to Exercise 2 to build the pipeline using the processes you defined in Exercise 1. 
 
-## Exercise 2 (Building a pipeline)
+## Exercise 2 - Building a pipeline
 
 
 Once logged in, click on the pipeline button in the top left of the screen. You’ll notice Enter Pipeline Name box, just below the Pipelines button.
@@ -269,7 +270,7 @@ Before you start building the pipeline make sure you have the processes availabl
 
 <img src="dolphinnext_images/build19-pipeline.png">
  
-## Exercise 3 (Executing a pipeline)
+## Exercise 3 - Executing a pipeline
 
   **1.** Once a pipeline is created, you will notice “Run” button at the right top of the page.
 
