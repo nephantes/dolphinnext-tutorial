@@ -14,9 +14,6 @@ DolphinNext provides:
 6. Easy re-execution of pipelines by copying previous runs settings
 7. Integrated data analysis and reporting interface with R markdown support
 
-Summary
-========
-
 Our aim is;
 --------
 
@@ -33,28 +30,50 @@ Expected learning outcome
 
 To understand the basics of DolphinNext, how to use pipeline builder for different objectives and to familiarize yourself with some standard software packages for such analysis.
 
-
-Before you start
+Overview
 ========
+  * [Before you start](#before-you-start)
+  * [Getting Started](#getting-started)
+  * [Exercise 1: Creating processes](#exercise-1---creating-processes)
+    * [FastQC process](#1-fastqc-process)
+    * [Hisat2 process](#2-hisat2-process)
+    * [RSeQC process](#3-rseqc-process)
+  * [Exercise 2: Building a pipeline](#exercise-2---building-a-pipeline)
+  * [Exercise 3: Running a pipeline](#exercise-3---running-a-pipeline)
 
-DolphinNext docker version
---------
+
+If you prefer, you can click on the video links to follow the tutorial in a video.
+
+[![Watch the video](dolphinnext_images/developer_guide1_youtube.png)](https://youtu.be/Q3P7eN2CRtc)
+
+**Video Summary:**
+  * Exercise 1: Creating processes
+    - FastQC process [at 0:07](https://youtu.be/Q3P7eN2CRtc?t=7)
+    - Hisat2 process [at 1:18](https://youtu.be/Q3P7eN2CRtc?t=78)
+    - RSeQC process [at 2:58](https://youtu.be/Q3P7eN2CRtc?t=178)
+  * Exercise 2: Building a pipeline [at 3:47](https://youtu.be/Q3P7eN2CRtc?t=227)
+  * Exercise 3: Running a pipeline [at 5:40](https://youtu.be/Q3P7eN2CRtc?t=340)
+  
+
+# Before you start
+
+## DolphinNext docker version
 
 DolphinNext can be run standalone using a docker container.
 First docker image need to be build unless you want to use prebuild from dockerhub. So, any change in the Dockerfile requires to build the image. But in this tutorial, we will pull it and start the container.
 
   * Note: If you don't have docker installed, please go to http://dolphinnext.umassmed.edu and let us know about it (biocore@umassmed.edu). We will set an account for you.
 
-Pull the docker image
----------
+## Pull the docker image
+
 
 1. Pull DolphinNext-studio
 ```   
 docker pull ummsbiocore/dolphinnext-studio
 ```
 
-Start the container
----------
+## Start the container
+
 
 1. We move database outside of the container to be able to keep the changes in the database every time you start the container.
 Please choose a directory in your machine to mount. For example, I will use ~/export directory for this purpose.
@@ -73,20 +92,11 @@ startup
 
 http://localhost:8080/dolphinnext
 
-Tutorial guide
-==============
+# Tutorial guide
 
 This guide will walk you through how to start using DolphinNext pipelines and creating new pipelines.
 
-Short Overview
-==============
-
-[![Watch the video](dolphinnext_images/0.jpg)](https://youtu.be/1ak1m5pvkw4)
-
-
-
-Getting Started
-===============
+## Getting Started
 
 First, you need to access DolphinNext web page: https://localhost:8080/dolphinnext and click **Sign Up** or **Sign in with Google** buttons. You will be asked to enter some information about your institution, username, etc. 
 
@@ -96,31 +106,28 @@ First, you need to access DolphinNext web page: https://localhost:8080/dolphinne
 Once you login, you will be the administrator of this mirror. You can add more users to your system and manage them from profile/admin section.
 
 
-Exercise 1 (Creating processes)
-===============
-
-[![Watch the video](dolphinnext_images/0.jpg)](https://youtu.be/d6jkg1l7FgA)
+## Exercise 1 - Creating processes
 
 Once logged in, click on the pipeline tab in the top left of the screen to access pipeline builder page. 
 
 <img src="dolphinnext_images/build1-builderpage.png" width="80%">
 
-**What is a "process"?**
-------------------
+### What is a "process"?
+
 Process is a basic programming element in nextflow to run user scripts. It usually have input, output parameters and script section. In this tutorial, you will see necesseary information to define a process shown in the left side of picture below. All that information need to be filled in "Add new process" screen shown in the middle in the picture below. DolphinNext will than convert this information to a nextflow process shown in the left side of the picture. Once a process created, it can be used in the pipeline builder. The example how it looks is shown in bottom left side in the picture. The mapping between the sections shown in colored rectangles.      
 
 <img src="dolphinnext_images/build-processmapping.png" width="100%">
 
-The process we will create in this exercise;
----------------
+### The process we will create in this exercise;
+
 1. FastQC process
 2. Hisat2 process
 3. RSeQC process
 
 You’ll notice several buttons at the left menu. New processes are created by clicking green “New process” button.
 
-  **1. FastQC process**:
-------------------------
+### 1. FastQC process
+
 **a.** Please enter FastQC for the process name and define a new "Menu Group". We will add the processes into this group in the sidebar.
 
 <img src="dolphinnext_images/build2-fastqc-addmenugroup.png" width="80%">
@@ -155,8 +162,8 @@ Script:
 
 **f.** Press "Save changes" button at the bottom of the modal to create the process. Now this process is ready to use. We will use it in the Exercise 2.
 
-  **2. Hisat2 process**:
-------------------------
+### 2. Hisat2 process
+
 Let's create Hisat2 process. 
 
 **a.** First, please click, green “New process” button to open "Add New Process" modal.
@@ -198,8 +205,7 @@ Script:
 
 **g.** Please save changes before you close the screen.
 
-  **3. RSeQC process**:
------------------------
+### 3. RSeQC process
 
 **a.** First, please click, green “New process” button to open "Add New Process" modal.
 
@@ -232,8 +238,8 @@ Script:
 
 Here Exercise 1 is finished. Please move to Exercise 2 to build the pipeline using the processes you defined in Exercise 1. 
 
-Exercise 2 (Building a pipeline)
-===============
+## Exercise 2 - Building a pipeline
+
 
 Once logged in, click on the pipeline button in the top left of the screen. You’ll notice Enter Pipeline Name box, just below the Pipelines button.
 
@@ -265,10 +271,7 @@ Before you start building the pipeline make sure you have the processes availabl
 
 <img src="dolphinnext_images/build19-pipeline.png">
  
-Exercise 3 (Executing a pipeline)
-===============
-
-[![Watch the video](dolphinnext_images/0.jpg)](https://youtu.be/gaq_LwewFPA)
+## Exercise 3 - Executing a pipeline
 
   **1.** Once a pipeline is created, you will notice “Run” button at the right top of the page.
 
