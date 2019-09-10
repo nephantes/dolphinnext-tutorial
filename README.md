@@ -38,20 +38,21 @@ Overview
     * [FastQC process](#1-fastqc-process)
     * [Hisat2 process](#2-hisat2-process)
     * [RSeQC process](#3-rseqc-process)
-  * [Exercise 2: Building pipeline](#exercise-2---building-pipeline)
-  * [Exercise 3: Running pipeline](#exercise-3---running-pipeline)
+  * [Exercise 2: Building a pipeline](#exercise-2---building-a-pipeline)
+  * [Exercise 3: Running a pipeline](#exercise-3---running-a-pipeline)
 
 
 If you prefer, you can click on the video links to follow the tutorial in a video.
 
 [![Watch the video](dolphinnext_images/developer_guide1_youtube.png)](https://youtu.be/Q3P7eN2CRtc)
 
+**Video Summary:**
   * Exercise 1: Creating processes
     - FastQC process [at 0:07](https://youtu.be/Q3P7eN2CRtc?t=7)
     - Hisat2 process [at 1:18](https://youtu.be/Q3P7eN2CRtc?t=78)
     - RSeQC process [at 2:58](https://youtu.be/Q3P7eN2CRtc?t=178)
-  * Exercise 2: Building pipeline [at 3:47](https://youtu.be/Q3P7eN2CRtc?t=227)
-  * Exercise 3: Running pipeline [at 5:40](https://youtu.be/Q3P7eN2CRtc?t=340)
+  * Exercise 2: Building a pipeline [at 3:47](https://youtu.be/Q3P7eN2CRtc?t=227)
+  * Exercise 3: Running a pipeline [at 5:40](https://youtu.be/Q3P7eN2CRtc?t=340)
   
 
 # Before you start
