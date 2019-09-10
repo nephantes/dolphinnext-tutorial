@@ -86,11 +86,11 @@ If you prefer, you can click on the video links to follow the tutorial in a vide
 [![Watch the video](dolphinnext_images/developer_guide1_youtube.png)](https://youtu.be/Q3P7eN2CRtc)
 
   * Exercise 1: Creating processes
-    - FastQC process
-    - Hisat2 process
-    - RSeQC process
-  * Exercise 2: Building pipeline
-  * Exercise 3: Running pipeline
+    - FastQC process [at 0:07](https://youtu.be/Q3P7eN2CRtc?t=7)
+    - Hisat2 process [at 1:18](https://youtu.be/Q3P7eN2CRtc?t=78)
+    - RSeQC process [at 2:58](https://youtu.be/Q3P7eN2CRtc?t=178)
+  * Exercise 2: Building pipeline [at 3:47](https://youtu.be/Q3P7eN2CRtc?t=227)
+  * Exercise 3: Running pipeline [at 5:40](https://youtu.be/Q3P7eN2CRtc?t=340)
 
 
 Getting Started
