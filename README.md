@@ -78,11 +78,19 @@ Tutorial guide
 
 This guide will walk you through how to start using DolphinNext pipelines and creating new pipelines.
 
-Short Overview
-==============
+Overview
+========
 
-[![Watch the video](dolphinnext_images/0.jpg)](https://youtu.be/1ak1m5pvkw4)
+If you prefer, you can click on the video links to follow the tutorial in a video.
 
+[![Watch the video](dolphinnext_images/developer_guide1_youtube.png)](https://youtu.be/Q3P7eN2CRtc)
+
+  * Exercise 1: Creating processes
+    - FastQC process
+    - Hisat2 process
+    - RSeQC process
+  * Exercise 2: Building pipeline
+  * Exercise 3: Running pipeline
 
 
 Getting Started
@@ -98,8 +106,6 @@ Once you login, you will be the administrator of this mirror. You can add more u
 
 Exercise 1 (Creating processes)
 ===============
-
-[![Watch the video](dolphinnext_images/0.jpg)](https://youtu.be/d6jkg1l7FgA)
 
 Once logged in, click on the pipeline tab in the top left of the screen to access pipeline builder page. 
 
@@ -267,8 +273,6 @@ Before you start building the pipeline make sure you have the processes availabl
  
 Exercise 3 (Executing a pipeline)
 ===============
-
-[![Watch the video](dolphinnext_images/0.jpg)](https://youtu.be/gaq_LwewFPA)
 
   **1.** Once a pipeline is created, you will notice “Run” button at the right top of the page.
 
