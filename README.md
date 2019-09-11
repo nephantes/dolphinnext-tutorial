@@ -42,7 +42,7 @@ Overview
     * [Hisat2 process](#2-hisat2-process)
     * [RSeQC process](#3-rseqc-process)
   * [Exercise 2: Building a pipeline](#exercise-2---building-a-pipeline)
-  * [Exercise 3: Running a pipeline](#exercise-3---running-a-pipeline)
+  * [Exercise 3: Running a pipeline](#exercise-3---executing-a-pipeline)
 
 
 If you prefer, you can click on the video links to follow the tutorial in a video.
@@ -246,7 +246,7 @@ Here Exercise 1 is finished. Please move to Exercise 2 to build the pipeline usi
 
 Once logged in, click to the pipeline button in the top left of the screen. You’ll notice Enter Pipeline Name box, just below the Pipelines button.
 
-Note*: If you could not finish the Exercise 1. Please "import" the RNA-Seq-Tutorial.dn file in github using your pipeline builder and the processes defined in Exercise 1 will be in your left menu that you can use them while doing Exercise 2.
+Note*: If you could not finish the Exercise 1. Please "import" the [RNA-Seq-Tutorial.dn](https://raw.githubusercontent.com/UMMS-Biocore/dolphinnext-tutorial/master/RNA-Seq-Tutorial.dn) file in github using your pipeline builder and the processes defined in Exercise 1 will be in your left menu that you can use them while doing Exercise 2.
 
 Before you start building the pipeline make sure you have the processes available in your menu.
 
