@@ -1,5 +1,8 @@
-Introduction
+DolphinNext Developer Tutorial
 ========
+
+Introduction
+-------
 
 DolphinNext is an easy-to-use platform for creating, deploying, and executing complex nextflow pipelines for high throughput data processing.
 
