@@ -290,17 +290,18 @@ You will then proceed by entering run name which will be added to your run list 
 <img src="dolphinnext_images/execute2_enter_runname.png" width="80%">
 
   **4.** Here, please enter your working directory, choose your "Run Environment", click "Use Singularity Image" and enter the values below;
-```
+<pre>
 Work Directory: /export/tests/test1
 Run Environment: Local
 Image Path: dolphinnext/rnaseq:1.0
 Run Options: --bind /export --bind /data
 
 Inputs:
-bedFile: /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed
-Hisat2_Index: /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome
-File Directory (Full Path): /data/fastq_data/single
-```  
+  - bedFile: /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed
+  - Hisat2_Index: /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome
+  - Input_Reads: First go to <b>Files</b> Tab in "<b>Select/Add Input File</b>" modal and click "<b>Add File</b>" button. 
+Then enter "File Directory (Full Path)" as: <b>/data/fastq_data/single</b> and follow <a href="#creating-collection">Creating Collection</a> section.
+</pre>  
 
 <img src="dolphinnext_images/execute3_enter_workdir.png" width="80%">
 
@@ -321,12 +322,13 @@ Hisat2_Index:
 
 <img src="dolphinnext_images/execute5_enter_index.png" width="100%">
 
-  **7.** Now, we are ready to enter adding files;
+  #### Creating Collection
+  **7.**  Now, we are ready to enter adding files;
 First go to Files Tab in "Select/Add Input File" modal and click "Add File" button
 
 <img src="dolphinnext_images/execute6_add_files.png" width="100%">
 
-  **8.** Enter the full path of the location of your files. Please choose "Files tab" and click "Add File" button. Here for the test case we will use the path below;
+  **8.**  Enter the full path of the location of your files. Please choose "Files tab" and click "Add File" button. Here for the test case we will use the path below;
 File Directory (Full Path): 
 ```
 /data/fastq_data/single
