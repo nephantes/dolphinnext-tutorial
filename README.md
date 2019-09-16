@@ -17,7 +17,7 @@ DolphinNext provides:
 6. Easy re-execution of pipelines by copying previous runs settings
 7. Integrated data analysis and reporting interface with R markdown support
 
-Our aim is;
+The aim is;
 --------
 
 1. Reusability
@@ -31,7 +31,7 @@ Our aim is;
 Expected learning outcome
 ========
 
-To understand the basics of DolphinNext, how to use pipeline builder for different objectives and to familiarize yourself with some standard software packages for such analysis.
+To understand the basics of DolphinNext, how to use pipeline builder for different objectives and to familiarize yourself with Nextflow and some standard software packages for such analysis.
 
 Overview
 ========
@@ -42,7 +42,7 @@ Overview
     * [Hisat2 process](#2-hisat2-process)
     * [RSeQC process](#3-rseqc-process)
   * [Exercise 2: Building a pipeline](#exercise-2---building-a-pipeline)
-  * [Exercise 3: Running a pipeline](#exercise-3---running-a-pipeline)
+  * [Exercise 3: Running a pipeline](#exercise-3---executing-a-pipeline)
 
 
 If you prefer, you can click on the video links to follow the tutorial in a video.
@@ -63,9 +63,7 @@ If you prefer, you can click on the video links to follow the tutorial in a vide
 ## DolphinNext docker version
 
 DolphinNext can be run standalone using a docker container.
-First docker image need to be build unless you want to use prebuild from dockerhub. So, any change in the Dockerfile requires to build the image. But in this tutorial, we will pull it and start the container.
-
-  * Note: If you don't have docker installed, please go to http://dolphinnext.umassmed.edu and let us know about it (biocore@umassmed.edu). We will set an account for you.
+First docker image need to be build unless you want to use prebuild from dockerhub. So, any changes in the Dockerfile require to build the image. But in this tutorial, we will pull it from dockerhub and start the container.
 
 ## Pull the docker image
 
@@ -97,7 +95,7 @@ http://localhost:8080/dolphinnext
 
 # Tutorial guide
 
-This guide will walk you through how to start using DolphinNext pipelines and creating new pipelines.
+This guide will walk you through how to start creating Nextflow processes using DolphinNext and creating new Nextflow pipelines using DolphinNext pipeline builder and executing them.
 
 ## Getting Started
 
@@ -117,7 +115,9 @@ Once logged in, click on the pipeline tab in the top left of the screen to acces
 
 ### What is a "process"?
 
-Process is a basic programming element in nextflow to run user scripts. It usually have input, output parameters and script section. In this tutorial, you will see necesseary information to define a process shown in the left side of picture below. All that information need to be filled in "Add new process" screen shown in the middle in the picture below. DolphinNext will than convert this information to a nextflow process shown in the left side of the picture. Once a process created, it can be used in the pipeline builder. The example how it looks is shown in bottom left side in the picture. The mapping between the sections shown in colored rectangles.      
+Process is a basic programming element in Nextflow to run user scripts. Please [click here](https://www.nextflow.io/docs/latest/process.html) to learn more about Nextflow's processes.
+
+A process usually has inputs, outputs and script section. In this tutorial, you will see sections that include necesseary information to define a process shown in the left side of the picture below. Please, use that information to be fill "Add new process" form shown in the middle section the picture below. DolphinNext will then convert this information to a nextflow process shown in the left side of the picture. Once a process created, it can be used in the pipeline builder. The example how it looks is shown in the bottom left side in the picture. The mapping between the sections shown in colored rectangles.      
 
 <img src="dolphinnext_images/build-processmapping.png" width="100%">
 
@@ -130,12 +130,13 @@ Process is a basic programming element in nextflow to run user scripts. It usual
 You’ll notice several buttons at the left menu. New processes are created by clicking green “New process” button.
 
 ### 1. FastQC process
+**a.** First, please click, green “New process” button to open "Add New Process" modal.
 
-**a.** Please enter FastQC for the process name and define a new "Menu Group". We will add the processes into this group in the sidebar.
+**b.** Please enter FastQC for the process name and define a new "Menu Group". 
 
 <img src="dolphinnext_images/build2-fastqc-addmenugroup.png" width="80%">
 
-**b.** In the FastQC process, we have an input, an output and a line of a command we are going to use to execute the fastqc process. 
+**c.** In the FastQC process, we have an input, an output and a line of a command we are going to use to execute the fastqc process. Please click "Add New Process" button and use the information below to fill the "Add New Process" form.
 
 ```
 Name: "FastQC"
@@ -150,20 +151,20 @@ Script:
   fastqc ${reads}
 ```
 
-**c.** Let's add input and output parameters (`reads` and `outputFileHTML`) using "+" button in "Parameters" section:
+**d.** Let's add input and output parameters (`reads` and `outputFileHTML`) using "+" button in "Parameters" section:
 
 <img src="dolphinnext_images/build3-fastqc-addnewparam-reads.png" width="80%">   
 <img src="dolphinnext_images/build4-fastqc-addnewparam-outputFileHTML.png" width="80%">   
 
-**d.** After both parameters created. Lets select them and define their "Input Names" that we are going to use in the script section
+**e.** After both parameters created. Lets select them and define their "Input Names" that we are going to use in the script section
 
 <img src="dolphinnext_images/build5-fastqc-parameters.png" width="100%">
  
-**e.** Let's enter the script section
+**f.** Let's enter the script section
 
 <img src="dolphinnext_images/build6-fastqc-script.png" width="80%">
 
-**f.** Press "Save changes" button at the bottom of the modal to create the process. Now this process is ready to use. We will use it in the Exercise 2.
+**g.** Press "Save changes" button at the bottom of the modal to create the process. Now this process is ready to use. We will use it in the Exercise 2.
 
 ### 2. Hisat2 process
 
@@ -212,13 +213,12 @@ Script:
 
 **a.** First, please click, green “New process” button to open "Add New Process" modal.
 
-**b.** The form should be filled using the values below;
-Please add a new parameter called bedFile. 
+**b.** The form should be filled using the information below;
 
 ```
 Name: "RSeQC"
 Menu Group: "Tutorial"
-Inputs: 
+Inputs:
   mapped_reads(bam,set) name: val(name), file(bam)
   bedFile(bed,file) name: bed
   
@@ -229,24 +229,24 @@ Script:
   read_distribution.py  -i ${bam} -r ${bed}> RSeQC.${name}.txt
 ```
 
-**c.** Add bedFile parameter;
+**c.** Please, add bedFile parameter;
 
 <img src="dolphinnext_images/build12-bedFile.png" width="80%">
 
-**d.** After you select input output parameters, add their names and enter the script. The page should look like this;
+**d.** After you select input output parameters, enter their names and the script. The page should look like this;
 
 <img src="dolphinnext_images/build13-RSeQC-process.png" width="80%">
 
-**g.** Please, Save changes before you close the screen.
+**g.** Please, save changes before you close the screen.
 
-Here Exercise 1 is finished. Please move to Exercise 2 to build the pipeline using the processes you defined in Exercise 1. 
+Here Exercise 1 is finished. Please move to Exercise 2 to build the pipeline using the processes you created in Exercise 1. 
 
 ## Exercise 2 - Building a pipeline
 
 
-Once logged in, click on the pipeline button in the top left of the screen. You’ll notice Enter Pipeline Name box, just below the Pipelines button.
+Once logged in, click to the pipeline button in the top left of the screen. You’ll notice Enter Pipeline Name box, just below the Pipelines button.
 
-Note*: If you could not finish the Exercise 1. Please import the tutorial.dn file using your pipeline builder and the processes defined in Exercise 1 will be in your left menu that you can use then while doing Exercise 2.
+Note*: If you could not finish the Exercise 1. Please "import" the [RNA-Seq-Tutorial.dn](https://raw.githubusercontent.com/UMMS-Biocore/dolphinnext-tutorial/master/RNA-Seq-Tutorial.dn) file in github using your pipeline builder and the processes defined in Exercise 1 will be in your left menu that you can use them while doing Exercise 2.
 
 Before you start building the pipeline make sure you have the processes available in your menu.
 
@@ -254,15 +254,15 @@ Before you start building the pipeline make sure you have the processes availabl
 
 **a.** Please enter a name to your pipeline. E.g. "RNA-Seq-Tutorial" and select your menu group "public pipelines" and press save button.
 
-**b.** Please drag and drop FastQC, Hisat2 and RSeQC to the workspace;
+**b.** Please drag and drop FastQC, Hisat2 and RSeQC to your workspace;
 
 <img src="dolphinnext_images/build15-drag-drop.png" width="80%">
 
 **c.** Please drag and drop three Input parameters and change their names to "Input_Reads", "Hisat2_Index" and "bedFile" and connect them to their processes;     
 
-**d.** Connect your Hisat2 process with RSeQC process using mapped_reads parameter in both. You will see that, if the types match you can connect the two processes.
+**d.** Connect your Hisat2 process with RSeQC process using mapped_reads parameter in both. You will observe that, when the types match you can connect the two processes using their matching input and output parameters.
 
-**e.** Drag & Drop three output parameters and name them "FastQC_output", "Hisat2_Summary", and "RSeQC_output" and connect them to their corresponding processes. While naming, click their "Publish to Web Directory" and choose the right output format according to the output type of the process.
+**e.** Drag & Drop three "output parameters" from the side bar and name them "FastQC_output", "Hisat2_Summary", and "RSeQC_output" and connect them to their corresponding processes. While naming, click their "Publish to Web Directory" and choose the right output format according to the output type of the process.
  
 <img src="dolphinnext_images/build16-name1.png" width="50%">
 
@@ -308,14 +308,14 @@ Then enter "File Directory (Full Path)" as: <b>/data/fastq_data/single</b> and f
   **5.** Now we are ready to enter inputs we defined for the pipeline.
 Please choose "Manually" tab.
 First enter the location of the bed file. 
-bedFile:
+**bedFile:**
 ```
 /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed
 ```
 <img src="dolphinnext_images/execute4_enter_bedfile.png" width="100%">
 
   **6.** Second enter the prefix for the hisat2 index files. Please choose "Manually" tab. 
-Hisat2_Index: 
+**Hisat2_Index:** 
 ```
 /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome
 ```
