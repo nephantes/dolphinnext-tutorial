@@ -300,7 +300,7 @@ Inputs:
   - bedFile: /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed
   - Hisat2_Index: /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome
   - Input_Reads: First go to <b>Files</b> Tab in "<b>Select/Add Input File</b>" modal and click "<b>Add File</b>" button. 
-Then enter "File Directory (Full Path)" as: <b>/data/fastq_data/single</b> and follow <a href="#--creating-collection">Creating Collection</a> section.
+Then enter "File Directory (Full Path)" as: <b>/data/fastq_data/single</b> and follow <a href="#creating-collection">Creating Collection</a> section.
 </pre>  
 
 <img src="dolphinnext_images/execute3_enter_workdir.png" width="80%">
@@ -322,8 +322,8 @@ Hisat2_Index:
 
 <img src="dolphinnext_images/execute5_enter_index.png" width="100%">
 
-  ### 7. Creating Collection
-  Now, we are ready to enter adding files;
+  #### Creating Collection
+  **7.**  Now, we are ready to enter adding files;
 First go to Files Tab in "Select/Add Input File" modal and click "Add File" button
 
 <img src="dolphinnext_images/execute6_add_files.png" width="100%">
