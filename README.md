@@ -323,7 +323,7 @@ First enter the location of the bed file.
 <img src="dolphinnext_images/execute5_enter_index.png" width="100%">
 
   #### Creating Collection
-  **7.**  Now, we are ready to enter adding files;
+  **7.**  Now, we are ready to add files;
 First go to Files Tab in "Select/Add Input File" modal and click "Add File" button
 
 <img src="dolphinnext_images/execute6_add_files.png" width="100%">
