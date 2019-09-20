@@ -297,8 +297,8 @@ Image Path: dolphinnext/rnaseq:1.0
 Run Options: --bind /export --bind /data
 
 Inputs:
-  - bedFile: /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed
-  - Hisat2_Index: /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome
+  - bedFile: /data/genome_data/mousetest/mm10/refseq_170804/genes/genes.bed (Use <b>Manually</b> tab)
+  - Hisat2_Index: /data/genome_data/mousetest/mm10/refseq_170804/Hisat2Index/genome (Use <b>Manually</b> tab)
   - Input_Reads: First go to <b>Files</b> Tab in "<b>Select/Add Input File</b>" modal and click "<b>Add File</b>" button. 
 Then enter "File Directory (Full Path)" as: <b>/data/fastq_data/single</b> and follow <a href="#creating-collection">Creating Collection</a> section.
 </pre>  
@@ -323,7 +323,7 @@ First enter the location of the bed file.
 <img src="dolphinnext_images/execute5_enter_index.png" width="100%">
 
   #### Creating Collection
-  **7.**  Now, we are ready to enter adding files;
+  **7.**  Now, we are ready to add files;
 First go to Files Tab in "Select/Add Input File" modal and click "Add File" button
 
 <img src="dolphinnext_images/execute6_add_files.png" width="100%">
