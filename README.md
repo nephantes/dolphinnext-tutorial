@@ -149,22 +149,17 @@ Outputs:
   
 Script:
   fastqc ${reads}
-```
+```  
 
-**d.** Let's add input and output parameters (`reads` and `outputFileHTML`) using "+" button in "Parameters" section:
-
-<img src="dolphinnext_images/build3-fastqc-addnewparam-reads.png" width="80%">   
-<img src="dolphinnext_images/build4-fastqc-addnewparam-outputFileHTML.png" width="80%">   
-
-**e.** After both parameters created. Lets select them and define their "Input Names" that we are going to use in the script section
+**d.** Lets select input and output parameters (`reads` and `outputFileHTML`) and define their "Input Names" that we are going to use in the script section.
 
 <img src="dolphinnext_images/build5-fastqc-parameters.png" width="100%">
  
-**f.** Let's enter the script section
+**e.** Let's enter the script section
 
 <img src="dolphinnext_images/build6-fastqc-script.png" width="80%">
 
-**g.** Press "Save changes" button at the bottom of the modal to create the process. Now this process is ready to use. We will use it in the Exercise 2.
+**f.** Press "Save changes" button at the bottom of the modal to create the process. Now this process is ready to use. We will use it in the Exercise 2.
 
 ### 2. Hisat2 process
 
@@ -173,7 +168,6 @@ Let's create Hisat2 process.
 **a.** First, please click, green “New process” button to open "Add New Process" modal.
 
 **b.** Inputs, outputs and scripts should be defined like below;
-Please add `hisat2IndexPrefix`, `mapped_reads` and `outputFileTxt` parameters by pressing "+" button next to "Parameters" section with the values below; 
 
 ```
 Name: "Hisat2"
@@ -191,23 +185,12 @@ Script:
   samtools view -bS ${name}.sam > ${name}.bam
 
 ```
-**c.** Add hisat2IndexPrefix parameter;
 
-<img src="dolphinnext_images/build7-hisat2-addnewparam-hisat2Index-prefix.png" width="80%">
-
-**d.** Add mapped_reads parameter;
-
-<img src="dolphinnext_images/build9-hisat2-addnewparams-mapped_reads.png" width="80%">
-
-**e.** Add outputFileTxt parameter;
-
-<img src="dolphinnext_images/build8-hisat2-addnewparams-outputFileTxt.png" width="80%">
-
-**f.** After you select input output parameters, add their names and enter the script. The page should look like this;
+**c.** After you select input output parameters (`hisat2IndexPrefix`, `mapped_reads` and `outputFileTxt` parameters), add their names and enter the script. The page should look like this;
 
 <img src="dolphinnext_images/build11-alignment-summary.png" width="80%">
 
-**g.** Please save changes before you close the screen.
+**d.** Please save changes before you close the screen.
 
 ### 3. RSeQC process
 
@@ -229,15 +212,11 @@ Script:
   read_distribution.py  -i ${bam} -r ${bed}> RSeQC.${name}.txt
 ```
 
-**c.** Please, add bedFile parameter;
-
-<img src="dolphinnext_images/build12-bedFile.png" width="80%">
-
-**d.** After you select input output parameters, enter their names and the script. The page should look like this;
+**c.** After you select input output parameters, enter their names and the script. The page should look like this;
 
 <img src="dolphinnext_images/build13-RSeQC-process.png" width="80%">
 
-**g.** Please, save changes before you close the screen.
+**d.** Please, save changes before you close the screen.
 
 Here Exercise 1 is finished. Please move to Exercise 2 to build the pipeline using the processes you created in Exercise 1. 
 
